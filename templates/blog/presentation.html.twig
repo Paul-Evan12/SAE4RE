@@ -1,0 +1,77 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Présentation - Mon Portfolio{% endblock %}
+
+{% block body %}
+    <nav>
+        <ul class="navbar">
+            <li><a href="{{ path('app_blog') }}">Accueil</a></li>
+            <li><a href="#competences">Compétences</a></li>
+            <li><a href="#personnel">Personnel</a></li>
+            <li><a href="#autre-info">Autre info</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <h1>Présentation rapide</h1>
+        <p>Cette page sert à vérifier que le lien depuis la page d'accueil fonctionne correctement. Vous pouvez remplacer ce texte par une courte biographie ou une description.</p>
+        <p><strong>Exemple :</strong> Je suis [Ton Nom], développeur web spécialisé en Symfony et en développement front-end. Je crée des applications modernes et maintenables.</p>
+        <a href="{{ path('app_blog') }}" class="btn">Retour à l'accueil</a>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 {{ 'site.owner'|trans({'%name%': '[Ton Nom]'}) }}. Tous droits réservés.</p>
+    </footer>
+{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <style>
+        nav {
+            background-color: #000;
+            padding: 12px 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+        }
+        .navbar {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            margin: 0;
+            padding: 0;
+            gap: 30px;
+        }
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            text-transform: uppercase;
+        }
+        .container {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            width: 80%;
+            max-width: 600px;
+            margin: 100px auto 20px;
+            text-align: center;
+        }
+        .btn {
+            padding: 12px 30px;
+            background-color: rgb(94, 68, 241);
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            border-radius: 5px;
+        }
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            font-size: 14px;
+            color: #777;
+        }
+    </style>
+{% endblock %}
