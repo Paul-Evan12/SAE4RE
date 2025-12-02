@@ -5,8 +5,8 @@
 {% block body %}
     <nav>
         <ul class="navbar">
-            <li><a href="{{ path('app_blog') }}">Accueil</a></li>
-            <li><a href="#competences">Compétences</a></li>
+            <li><a href="{{ path('app_index') }}">Accueil</a></li>
+            <li><a href="{{ path('app_blog_competences') }}">Compétences</a></li>
             <li><a href="#personnel">Personnel</a></li>
             <li><a href="#autre-info">Autre info</a></li>
         </ul>
@@ -16,17 +16,21 @@
         <h1>Présentation rapide</h1>
         <p>Cette page sert à vérifier que le lien depuis la page d'accueil fonctionne correctement. Vous pouvez remplacer ce texte par une courte biographie ou une description.</p>
         <p><strong>Exemple :</strong> Je suis [Ton Nom], développeur web spécialisé en Symfony et en développement front-end. Je crée des applications modernes et maintenables.</p>
-        <a href="{{ path('app_blog') }}" class="btn">Retour à l'accueil</a>
+        <a href="{{ path('app_index') }}" class="btn">Retour à l'accueil</a>
     </div>
 
-    <footer>
-        <p>&copy; 2025 {{ 'site.owner'|trans({'%name%': '[Ton Nom]'}) }}. Tous droits réservés.</p>
+    <footer style="position:fixed;bottom:0;left:0;width:100%;background:#333;color:#fff;padding:10px 0;z-index:999;text-align:center;">
+        <p>&copy; 2025 site.owner. Tous droits réservés.</p>
     </footer>
 {% endblock %}
 
 {% block stylesheets %}
     {{ parent() }}
     <style>
+        body {
+            background-color: #222;
+            color: #fff;
+        }
         nav {
             background-color: #000;
             padding: 12px 0;
@@ -51,7 +55,8 @@
             text-transform: uppercase;
         }
         .container {
-            background-color: #fff;
+            background-color: #333;
+            color: #fff;
             padding: 30px;
             border-radius: 10px;
             width: 80%;
@@ -59,19 +64,23 @@
             margin: 100px auto 20px;
             text-align: center;
         }
+        h1, h2, h3, h4, h5, h6, p, a, footer {
+            color: #fff;
+        }
         .btn {
-            padding: 12px 30px;
-            background-color: rgb(94, 68, 241);
-            color: white;
-            text-decoration: none;
-            font-size: 18px;
-            border-radius: 5px;
+            background-color: #444;
+            color: #fff;
+        }
+        .btn:hover {
+            background-color: #bbb;
+            color: #222;
         }
         footer {
+            background-color: #333;
+            color: #fff;
             text-align: center;
             margin-top: 40px;
             font-size: 14px;
-            color: #777;
         }
     </style>
 {% endblock %}

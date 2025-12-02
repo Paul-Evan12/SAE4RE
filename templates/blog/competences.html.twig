@@ -1,0 +1,111 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Compétences - Mon Portfolio{% endblock %}
+
+{% block body %}
+    <nav>
+        <ul class="navbar">
+            <li><a href="{{ path('app_index') }}">Accueil</a></li>
+            <li><a href="{{ path('app_blog_presentation') }}">Présentation</a></li>
+            <li><a href="{{ path('app_blog_competences') }}">Compétences</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <h1>Compétences</h1>
+        <h2>RT1 - Administrer les réseaux et l’Internet</h2>
+        <ul>
+            <li><a href="#">AC11.01 Maîtriser les lois fondamentales de l’électricité afin d’intervenir sur des équipements de réseaux et télécommunications</a></li>
+            <li><a href="#">AC11.02 Comprendre l’architecture et les fondements des systèmes numériques, les principes du codage de l’information, des communications et de l’Internet</a></li>
+            <li><a href="#">AC11.03 Configurer les fonctions de base du réseau local</a></li>
+            <li><a href="#">AC11.04 Maîtriser les rôles et les principes fondamentaux des systèmes d’exploitation afin d’interagir avec ceux-ci pour la configuration et l’administration des réseaux et services fournis</a></li>
+            <li><a href="#">AC11.05 Savoir identifier les dysfonctionnements du réseau local</a></li>
+            <li><a href="#">AC11.06 Installer un poste client, expliquer la procédure mise en place</a></li>
+        </ul>
+        <h2>RT2 - Connecter les entreprises et les usagers</h2>
+        <ul>
+            <li><a href="#">AC12.01 Mesurer et analyser les signaux</a></li>
+            <li><a href="#">AC12.02 Caractériser des systèmes de transmissions élémentaires et découvrir la modélisation mathématique de leur fonctionnement</a></li>
+            <li><a href="#">AC12.03 Déployer des supports de transmission</a></li>
+            <li><a href="#">AC12.04 Connecter les systèmes de ToIP</a></li>
+            <li><a href="#">AC12.05 Communiquer avec un tiers (client, collaborateur...) et adapter son discours et sa langue à son interlocuteur</a></li>
+        </ul>
+        <h2>RT3 - Créer des outils et des applications informatiques pour les R&T</h2>
+        <ul>
+            <li><a href="#">AC13.01 Utiliser un système informatique et ses outils</a></li>
+            <li><a href="#">AC13.02 Lire, exécuter, corriger et modifier un programme</a></li>
+            <li><a href="#">AC13.03 Traduire un algorithme, dans un langage et pour un environnement donné</a></li>
+            <li><a href="#">AC13.04 Connaître l’architecture et les technologies d’un site Web</a></li>
+            <li><a href="#">AC13.05 Choisir les mécanismes de gestion de données adaptés au développement de l’outil et argumenter ses choix</a></li>
+            <li><a href="#">AC13.06 S’intégrer dans un environnement propice au développement et au travail collaboratif</a></li>
+        </ul>
+    </div>
+    <footer style="position:fixed;bottom:0;left:0;width:100%;background:#333;color:#fff;padding:10px 0;z-index:999;text-align:center;">
+        <p>&copy; 2025 site.owner. Tous droits réservés.</p>
+    </footer>
+{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    <style>
+        body {
+            background-color: #222;
+            color: #fff;
+        }
+        nav {
+            background-color: #000;
+            padding: 12px 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+        }
+        .navbar {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            margin: 0;
+            padding: 0;
+            gap: 30px;
+        }
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            text-transform: uppercase;
+        }
+        .container {
+            background-color: #333;
+            color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            width: 80%;
+            max-width: 800px;
+            margin: 100px auto 20px;
+            text-align: left;
+        }
+        h1, h2, h3, h4, h5, h6, p, ul li, a, footer {
+            color: #fff;
+        }
+        ul li a {
+            color: #fff;
+            text-decoration: underline;
+        }
+        ul li a:hover {
+            color: #bbb;
+        }
+        .container ul, .container h2 {
+            background-color: #222;
+            border-radius: 6px;
+            padding: 10px;
+        }
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            margin-top: 40px;
+            font-size: 14px;
+        }
+    </style>
+{% endblock %}

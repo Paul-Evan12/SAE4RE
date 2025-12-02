@@ -5,20 +5,18 @@
 {% block body %}
     <nav>
         <ul class="navbar">
-            <li><a href="blog/presentation.html.twig">Présentation</a></li>
-            <li><a href="#competences">Compétences</a></li>
-            <li><a href="#personnel">Personnel</a></li>
-            <li><a href="#autre-info">Autre info</a></li>
+            <li><a href="{{ path('app_blog_presentation') }}">Présentation</a></li>
+            <li><a href="{{ path('app_blog_competences') }}">Compétences</a></li>
         </ul>
     </nav>
 
     <div class="container">
         <h1>Bienvenue sur mon Portfolio !</h1>
         <p>Je suis <strong>Paul-Evan</strong>, un développeur web passionné par la création de sites et applications innovants. Découvrez mes projets et mon parcours professionnel ci-dessous.</p>
-        <a href="#projets" class="btn">Voir mes projets</a>
+        <a href="{{ path('app_blog_presentation') }}" class="btn">Voir ma présentation</a>
     </div>
 
-    <footer>
+    <footer style="position:fixed;bottom:0;left:0;width:100%;background:#333;color:#fff;padding:10px 0;z-index:999;text-align:center;">
         <p>&copy; 2025 {{ 'site.owner'|trans({'%name%': '[Ton Nom]'}) }}. Tous droits réservés.</p>
     </footer>
 {% endblock %}
@@ -30,8 +28,8 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: rgb(255, 255, 255);
-            color: #333;
+            background-color: #222;
+            color: #fff;
         }
 
         /* Barre de navigation en haut */
@@ -72,10 +70,10 @@
 
         /* Espace pour que le contenu ne soit pas caché par la barre fixe */
         .container {
-            background-color: #fff;
+            background-color: #333;
+            color: #fff;
             padding: 30px;
             border-radius: 10px;
-            box-shadow: 0 0 15px rgb(255, 255, 255);
             width: 80%;
             max-width: 600px;
             margin: 100px auto 20px; /* margin-top augmenté pour tenir compte de la nav fixe */
@@ -84,7 +82,7 @@
 
         h1 {
             font-size: 36px;
-            color: rgb(66, 14, 252);
+            color: #fff;
             margin-bottom: 20px;
         }
 
@@ -92,11 +90,12 @@
             font-size: 18px;
             line-height: 1.6;
             margin-bottom: 30px;
+            color: #fff;
         }
 
         .btn {
             padding: 12px 30px;
-            background-color: rgb(94, 68, 241);
+            background-color: #444;
             color: white;
             text-decoration: none;
             font-size: 18px;
@@ -105,14 +104,20 @@
         }
 
         .btn:hover {
-            background-color: rgb(2, 2, 2);
+            background-color: #bbb;
+            color: #222;
         }
 
         footer {
+            background-color: #333;
+            color: #fff;
             text-align: center;
             margin-top: 40px;
             font-size: 14px;
-            color: #777;
+        }
+
+        h1, h2, h3, h4, h5, h6, p, a, footer {
+            color: #fff;
         }
     </style>
 {% endblock %}
