@@ -7,20 +7,46 @@
         <ul class="navbar">
             <li><a href="{{ path('app_index') }}">Accueil</a></li>
             <li><a href="{{ path('app_blog_competences') }}">Compétences</a></li>
-            <li><a href="#personnel">Personnel</a></li>
-            <li><a href="#autre-info">Autre info</a></li>
         </ul>
     </nav>
 
     <div class="container">
-        <h1>Présentation rapide</h1>
-        <p>Cette page sert à vérifier que le lien depuis la page d'accueil fonctionne correctement. Vous pouvez remplacer ce texte par une courte biographie ou une description.</p>
-        <p><strong>Exemple :</strong> Je suis [Ton Nom], développeur web spécialisé en Symfony et en développement front-end. Je crée des applications modernes et maintenables.</p>
+        <h1>Présentation</h1>
+        <p>Je suis Paul-Evan, étudiant en Réseau et Télécommunication à Roanne.</p>
+        <h2>Voici mon parcours avant de rentrer dans cette licence:</h2>
+        <h2 style="font-size:2em;font-weight:bold;margin-top:30px;">Parcours</h2>
+        <div style="font-size:1em;margin-top:15px;line-height:2;">
+            <a href="https://www.mongre.org/" target="_blank" style="color:#fff;text-decoration:underline;">Lycée: Notre Dame de Mongré, 2021-2024 (Villefranche sur Saône)</a><br>
+            <a href="https://www.fdse.unilim.fr/" target="_blank" style="color:#fff;text-decoration:underline;">Fac de droit 2024-2025 (Limoges)</a><br>
+            <a href="https://iut-roanne.univ-st-etienne.fr/fr/index.html" target="_blank" style="color:#fff;text-decoration:underline;">Réseaux et Télécommunication, 2025-2026 (Roanne)</a>
+        </div>
+        <br>
+        <h2 style="font-size:2em;font-weight:bold;margin-top:40px;">Loisirs</h2>
+        <div class="loisirs-section" style="display:flex;justify-content:center;gap:40px;margin-top:30px;flex-wrap:wrap;">
+            <div class="loisir-item" style="position:relative;display:flex;align-items:center;">
+                <img src="https://static.bandainamcoent.eu/high/elden-ring/elden-ring/00-page-setup/elden-ring-new-header-mobile.jpg" alt="Gaming" class="loisir-img" style="width:150px;height:90px;object-fit:cover;border-radius:10px;cursor:pointer;">
+                <span class="loisir-text">Gaming</span>
+            </div>
+            <div class="loisir-item" style="position:relative;display:flex;align-items:center;">
+                <img src="https://sportsogood.fr/wp-content/uploads/2021/10/basketball.png" alt="Basket" class="loisir-img" style="width:90px;height:90px;object-fit:cover;border-radius:10px;cursor:pointer;">
+                <span class="loisir-text">Basket</span>
+            </div>
+            <div class="loisir-item" style="position:relative;display:flex;align-items:center;">
+                <img src="https://blog.babasport.fr/wp-content/uploads/2016/06/Karting-4.jpg" alt="Karting" class="loisir-img" style="width:150px;height:90px;object-fit:cover;border-radius:10px;cursor:pointer;">
+                <span class="loisir-text">Karting</span>
+            </div>
+        </div>
+        <br>
         <a href="{{ path('app_index') }}" class="btn">Retour à l'accueil</a>
     </div>
 
     <footer style="position:fixed;bottom:0;left:0;width:100%;background:#333;color:#fff;padding:10px 0;z-index:999;text-align:center;">
-        <p>&copy; 2025 site.owner. Tous droits réservés.</p>
+        <div style="display: flex; align-items: center; justify-content: center; gap: 10px;">
+            <span>site créé par Paul-Evan Fourré-Rossetto.</span>
+            <a href="https://www.instagram.com/paulevan_rt/?next=%2F" target="_blank" style="display:inline-block;vertical-align:middle;">
+                <img src="/assets/instagram.svg" alt="Instagram" style="width:24px;height:24px;filter:brightness(0) invert(1);">
+            </a>
+        </div>
     </footer>
 {% endblock %}
 
@@ -82,5 +108,23 @@
             margin-top: 40px;
             font-size: 14px;
         }
+        .loisir-text {
+            display: none;
+            margin-left: 15px;
+            font-size: 1.2em;
+            background: #222;
+            padding: 8px 16px;
+            border-radius: 8px;
+            transition: display 0.2s;
+        }
+        .loisir-item:hover .loisir-text,
+        .loisir-img:hover + .loisir-text {
+            display: inline-block;
+        }
     </style>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <!-- Le JS n'est plus nécessaire pour le survol, tout est géré en CSS -->
 {% endblock %}

@@ -7,14 +7,13 @@
         <ul class="navbar">
             <li><a href="{{ path('app_index') }}">Accueil</a></li>
             <li><a href="{{ path('app_blog_presentation') }}">Présentation</a></li>
-            <li><a href="{{ path('app_blog_competences') }}">Compétences</a></li>
         </ul>
     </nav>
 
-    <div class="container">
+    <div class="container" style="text-align:center;">
         <h1>Compétences</h1>
         <h2>RT1 - Administrer les réseaux et l’Internet</h2>
-        <ul>
+        <ul style="text-align:left;display:inline-block;">
             <li><a href="#">AC11.01 Maîtriser les lois fondamentales de l’électricité afin d’intervenir sur des équipements de réseaux et télécommunications</a></li>
             <li><a href="#">AC11.02 Comprendre l’architecture et les fondements des systèmes numériques, les principes du codage de l’information, des communications et de l’Internet</a></li>
             <li><a href="#">AC11.03 Configurer les fonctions de base du réseau local</a></li>
@@ -23,7 +22,7 @@
             <li><a href="#">AC11.06 Installer un poste client, expliquer la procédure mise en place</a></li>
         </ul>
         <h2>RT2 - Connecter les entreprises et les usagers</h2>
-        <ul>
+        <ul style="text-align:left;display:inline-block;">
             <li><a href="#">AC12.01 Mesurer et analyser les signaux</a></li>
             <li><a href="#">AC12.02 Caractériser des systèmes de transmissions élémentaires et découvrir la modélisation mathématique de leur fonctionnement</a></li>
             <li><a href="#">AC12.03 Déployer des supports de transmission</a></li>
@@ -31,7 +30,7 @@
             <li><a href="#">AC12.05 Communiquer avec un tiers (client, collaborateur...) et adapter son discours et sa langue à son interlocuteur</a></li>
         </ul>
         <h2>RT3 - Créer des outils et des applications informatiques pour les R&T</h2>
-        <ul>
+        <ul style="text-align:left;display:inline-block;">
             <li><a href="#">AC13.01 Utiliser un système informatique et ses outils</a></li>
             <li><a href="#">AC13.02 Lire, exécuter, corriger et modifier un programme</a></li>
             <li><a href="#">AC13.03 Traduire un algorithme, dans un langage et pour un environnement donné</a></li>
@@ -41,7 +40,12 @@
         </ul>
     </div>
     <footer style="position:fixed;bottom:0;left:0;width:100%;background:#333;color:#fff;padding:10px 0;z-index:999;text-align:center;">
-        <p>&copy; 2025 site.owner. Tous droits réservés.</p>
+        <div style="display: flex; align-items: center; justify-content: center; gap: 10px;">
+            <span>site créé par Paul-Evan Fourré-Rossetto.</span>
+            <a href="https://www.instagram.com/paulevan_rt/?next=%2F" target="_blank" style="display:inline-block;vertical-align:middle;">
+                <img src="/assets/instagram.svg" alt="Instagram" style="width:24px;height:24px;filter:brightness(0) invert(1);">
+            </a>
+        </div>
     </footer>
 {% endblock %}
 
@@ -49,6 +53,7 @@
     {{ parent() }}
     <style>
         body {
+            font-family: Arial, sans-serif;
             background-color: #222;
             color: #fff;
         }
@@ -83,10 +88,11 @@
             width: 80%;
             max-width: 800px;
             margin: 100px auto 20px;
-            text-align: left;
+            text-align: center;
         }
         h1, h2, h3, h4, h5, h6, p, ul li, a, footer {
             color: #fff;
+            font-family: inherit;
         }
         ul li a {
             color: #fff;
@@ -99,6 +105,10 @@
             background-color: #222;
             border-radius: 6px;
             padding: 10px;
+        }
+        .container ul {
+            text-align: left;
+            display: inline-block;
         }
         footer {
             background-color: #333;

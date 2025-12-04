@@ -12,12 +12,17 @@
 
     <div class="container">
         <h1>Bienvenue sur mon Portfolio !</h1>
-        <p>Je suis <strong>Paul-Evan</strong>, un développeur web passionné par la création de sites et applications innovants. Découvrez mes projets et mon parcours professionnel ci-dessous.</p>
-        <a href="{{ path('app_blog_presentation') }}" class="btn">Voir ma présentation</a>
+        <p>Je suis <strong>Paul-Evan</strong>, un étudiant étant passioné de l'informatique voulant plus tard en faire mon métier. Actuellement en étude à l'iut de Roanne dans le BUT réseaux et télécommunication, je souhaite continuer à m'améliorer dans la partie cybersécurité qu'offre mon étude </p>
+        <a href="{{ path('app_blog_presentation') }}" class="btn">Pour en savoir plus</a>
     </div>
 
     <footer style="position:fixed;bottom:0;left:0;width:100%;background:#333;color:#fff;padding:10px 0;z-index:999;text-align:center;">
-        <p>&copy; 2025 {{ 'site.owner'|trans({'%name%': '[Ton Nom]'}) }}. Tous droits réservés.</p>
+        <div style="display: flex; align-items: center; justify-content: center; gap: 10px;">
+            <span>site créé par Paul-Evan Fourré-Rossetto.</span>
+            <a href="https://www.instagram.com/paulevan_rt/?next=%2F" target="_blank" style="display:inline-block;vertical-align:middle;">
+                <img src="/assets/instagram.svg" alt="Instagram" style="width:24px;height:24px;filter:brightness(0) invert(1);">
+            </a>
+        </div>
     </footer>
 {% endblock %}
 
@@ -120,4 +125,22 @@
             color: #fff;
         }
     </style>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('.loisir-item').forEach(function(item) {
+                const img = item.querySelector('img');
+                const text = item.querySelector('.loisir-text');
+                img.addEventListener('mouseenter', function() {
+                    text.style.display = 'inline-block';
+                });
+                img.addEventListener('mouseleave', function() {
+                    text.style.display = 'none';
+                });
+            });
+        });
+    </script>
 {% endblock %}
