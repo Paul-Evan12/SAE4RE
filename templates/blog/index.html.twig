@@ -7,21 +7,27 @@
         <ul class="navbar">
             <li><a href="{{ path('app_blog_presentation') }}">Présentation</a></li>
             <li><a href="{{ path('app_blog_competences') }}">Compétences</a></li>
+             <li><a href="https://dochub.com/poloskitos/EB5r38Awlm9xY9QRXzZ1kD/cv-pefr-bis-250319-124039-251204-094729-pdf" target="_blank" rel="noopener">CV</a></li>
         </ul>
     </nav>
 
     <div class="container">
         <h1>Bienvenue sur mon Portfolio !</h1>
         <p>Je suis <strong>Paul-Evan</strong>, un étudiant étant passioné de l'informatique voulant plus tard en faire mon métier. Actuellement en étude à l'iut de Roanne dans le BUT réseaux et télécommunication, je souhaite continuer à m'améliorer dans la partie cybersécurité qu'offre mon étude </p>
+        <p>je suis en recherche d'emplois/alternance afin d'améliorer mes compétences acquises ou en cours d'acquisition. Pour en comprendre plus sur moi suivre le lien ci-dessous.</p>
         <a href="{{ path('app_blog_presentation') }}" class="btn">Pour en savoir plus</a>
     </div>
 
-    <footer style="position:fixed;bottom:0;left:0;width:100%;background:#333;color:#fff;padding:10px 0;z-index:999;text-align:center;">
-        <div style="display: flex; align-items: center; justify-content: center; gap: 10px;">
-            <span>site créé par Paul-Evan Fourré-Rossetto.</span>
-            <a href="https://www.instagram.com/paulevan_rt/?next=%2F" target="_blank" style="display:inline-block;vertical-align:middle;">
-                <img src="/assets/instagram.svg" alt="Instagram" style="width:24px;height:24px;filter:brightness(0) invert(1);">
-            </a>
+    <footer style="position:fixed;bottom:0;left:0;width:100%;background:#333;color:#fff;padding:12px 0;z-index:999;text-align:center;">
+        <div style="display:flex;flex-direction:column;align-items:center;gap:6px;">
+            <div style="display:flex;align-items:center;gap:12px;">
+                 <a href="https://www.instagram.com/paulevan_rt/?next=%2F" target="_blank">
+                    <img src="lien_vers_logo_instagram.png" alt="Instagram" style="height:24px;vertical-align:middle;">
+                </a>
+                <span style="margin-left:1em;">| Gmail: <a href="mailto:paulevanfr@gmail.com">paulevanfr@gmail.com</a></span>
+                <span style="margin-left:1em;">| Téléphone: <a href="tel:0624525467">06 24 52 54 67</a></span>
+            </div>
+            <div>site créé par Paul-Evan Fourré-Rossetto.</div>
         </div>
     </footer>
 {% endblock %}
@@ -36,8 +42,6 @@
             background-color: #222;
             color: #fff;
         }
-
-        /* Barre de navigation en haut */
         nav {
             background-color: #000;
             padding: 12px 0;
@@ -73,9 +77,8 @@
             text-decoration: underline;
         }
 
-        /* Espace pour que le contenu ne soit pas caché par la barre fixe */
         .container {
-            background-color: #333;
+            background-color: #333333ff;
             color: #fff;
             padding: 30px;
             border-radius: 10px;
@@ -100,7 +103,7 @@
 
         .btn {
             padding: 12px 30px;
-            background-color: #444;
+            background-color: #131111ff;
             color: white;
             text-decoration: none;
             font-size: 18px;
