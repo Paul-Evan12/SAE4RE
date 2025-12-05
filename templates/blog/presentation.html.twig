@@ -8,7 +8,6 @@
             <li><a href="{{ path('app_index') }}">Accueil</a></li>
             <li><a href="{{ path('app_blog_competences') }}">Compétences</a></li>
             <li><a href="https://dochub.com/poloskitos/EB5r38Awlm9xY9QRXzZ1kD/cv-pefr-bis-250319-124039-251204-094729-pdf" target="_blank" rel="noopener">CV</a></li>
-
         </ul>
     </nav>
 
@@ -23,30 +22,44 @@
             <a href="https://iut-roanne.univ-st-etienne.fr/fr/index.html" target="_blank" style="color:#fff;text-decoration:underline;">Réseaux et Télécommunication, 2025-2026 (Roanne)</a>
         </div>
         <br>
+
         <h2 style="font-size:2em;font-weight:bold;margin-top:40px;">Loisirs</h2>
-        <div class="loisirs-section" style="display:flex;justify-content:center;gap:40px;margin-top:30px;flex-wrap:wrap;">
-            <div class="loisir-item" style="position:relative;display:flex;align-items:center;">
-                <img src="https://static.bandainamcoent.eu/high/elden-ring/elden-ring/00-page-setup/elden-ring-new-header-mobile.jpg" alt="Gaming" class="loisir-img" style="width:150px;height:90px;object-fit:cover;border-radius:10px;cursor:pointer;">
-                <span class="loisir-text">Gaming</span>
+
+        <div class="loisirs-wrapper">
+            <div class="side-thumb" id="left-thumb">
+                <!-- left thumbnail -->
+                <img src="https://static.bandainamcoent.eu/high/elden-ring/elden-ring/00-page-setup/elden-ring-new-header-mobile.jpg" alt="Gaming">
             </div>
-            <div class="loisir-item" style="position:relative;display:flex;align-items:center;">
-                <img src="https://sportsogood.fr/wp-content/uploads/2021/10/basketball.png" alt="Basket" class="loisir-img" style="width:90px;height:90px;object-fit:cover;border-radius:10px;cursor:pointer;">
-                <span class="loisir-text">Basket</span>
+
+            <div class="carousel-main">
+                <button class="ctrl prev" id="prevBtn" aria-label="Précédent">‹</button>
+                <div class="carousel-viewport">
+                    <img id="mainImage" src="https://static.bandainamcoent.eu/high/elden-ring/elden-ring/00-page-setup/elden-ring-new-header-mobile.jpg" alt="Loisir">
+                </div>
+                <button class="ctrl next" id="nextBtn" aria-label="Suivant">›</button>
+
+                <div class="thumbs" id="thumbs">
+                    <img data-index="0" src="https://static.bandainamcoent.eu/high/elden-ring/elden-ring/00-page-setup/elden-ring-new-header-mobile.jpg" alt="Gaming">
+                    <img data-index="1" src="https://sportsogood.fr/wp-content/uploads/2021/10/basketball.png" alt="Basketball">
+                    <img data-index="2" src="https://blog.babasport.fr/wp-content/uploads/2016/06/Karting-4.jpg" alt="Karting">
+                </div>
             </div>
-            <div class="loisir-item" style="position:relative;display:flex;align-items:center;">
-                <img src="https://blog.babasport.fr/wp-content/uploads/2016/06/Karting-4.jpg" alt="Karting" class="loisir-img" style="width:150px;height:90px;object-fit:cover;border-radius:10px;cursor:pointer;">
-                <span class="loisir-text">Karting</span>
+
+            <div class="info-panel" id="infoPanel">
+                <h3 id="loisirTitle">Gaming</h3>
+                <p id="loisirDesc">J'aime jouer pour le challenge, la stratégie et la communauté. Le gaming me permet de me détendre tout en développant ma réflexion.</p>
             </div>
         </div>
+
         <br>
         <a href="{{ path('app_index') }}" class="btn">Retour à l'accueil</a>
     </div>
 
-     <footer style="position:fixed;bottom:0;left:0;width:100%;background:#333;color:#fff;padding:12px 0;z-index:999;text-align:center;">
+    <footer style="position:fixed;bottom:0;left:0;width:100%;background:#333;color:#fff;padding:12px 0;z-index:999;text-align:center;">
         <div style="display:flex;flex-direction:column;align-items:center;gap:6px;">
             <div style="display:flex;align-items:center;gap:12px;">
-                 <a href="https://www.instagram.com/paulevan_rt/?next=%2F" target="_blank">
-                    <img src="lien_vers_logo_instagram.png" alt="Instagram" style="height:24px;vertical-align:middle;">
+                <a href="https://www.instagram.com/paulevan_rt/?next=%2F" target="_blank" rel="noopener" aria-label="Instagram" style="color:#fff;font-size:20px;display:inline-flex;align-items:center;">
+                    <i class="bi bi-instagram" aria-hidden="true"></i>
                 </a>
                 <span style="margin-left:1em;">| Gmail: <a href="mailto:paulevanfr@gmail.com">paulevanfr@gmail.com</a></span>
                 <span style="margin-left:1em;">| Téléphone: <a href="tel:0624525467">06 24 52 54 67</a></span>
@@ -58,8 +71,9 @@
 
 {% block stylesheets %}
     {{ parent() }}
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
     <style>
-       body {
+        body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
@@ -94,46 +108,205 @@
             color: #fff;
             padding: 30px;
             border-radius: 10px;
-            width: 80%;
-            max-width: 600px;
-            margin: 100px auto 20px;
+            width: 90%;
+            max-width: 900px;
+            margin: 120px auto 20px;
             text-align: center;
         }
-        h1, h2, h3, h4, h5, h6, p, a, footer {
-            color: #fff;
+
+        /* LOISIRS CAROUSEL */
+        .loisirs-wrapper {
+            display: grid;
+            grid-template-columns: 120px 1fr 300px;
+            gap: 16px;
+            align-items: center;
+            margin-top: 20px;
         }
-        .btn {
-            background-color: #fffcfcff;
-            color: #b3b1b1ff;
-        }
-        .btn:hover {
-            background-color: #f0f0f0ff;
-            color: #222;
-        }
-        footer {
-            background-color: #272727ff;
-            color: #d6d6d6ff;
-            text-align: center;
-            margin-top: 40px;
-            font-size: 14px;
-        }
-        .loisir-text {
-            display: none;
-            margin-left: 15px;
-            font-size: 1.2em;
-            background: #222;
-            padding: 8px 16px;
+        .side-thumb img {
+            width: 100%;
+            height: auto;
             border-radius: 8px;
-            transition: display 0.2s;
+            object-fit: cover;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.5);
         }
-        .loisir-item:hover .loisir-text,
-        .loisir-img:hover + .loisir-text {
-            display: inline-block;
+        .carousel-main {
+            position: relative;
+            display:flex;
+            flex-direction:column;
+            align-items:center;
+            gap:10px;
+        }
+        .carousel-viewport {
+            width: 100%;
+            height: 260px;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            background:#222;
+            border-radius:10px;
+            overflow:hidden;
+        }
+        .carousel-viewport img {
+            max-width:100%;
+            max-height:100%;
+            object-fit:cover;
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+        .ctrl {
+            position:absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0,0,0,0.5);
+            color: #fff;
+            border: none;
+            font-size: 28px;
+            width:40px;
+            height:40px;
+            border-radius:50%;
+            cursor:pointer;
+        }
+        .prev { left: 8px; }
+        .next { right: 8px; }
+        .thumbs {
+            display:flex;
+            gap:8px;
+            justify-content:center;
+        }
+        .thumbs img {
+            width:60px;
+            height:40px;
+            object-fit:cover;
+            border-radius:6px;
+            cursor:pointer;
+            opacity:0.6;
+            transition: opacity 0.2s ease, transform 0.2s ease;
+        }
+        .thumbs img.active { opacity:1; transform:scale(1.05); box-shadow:0 4px 8px rgba(0,0,0,0.4); }
+
+        .info-panel {
+            text-align:left;
+            background: rgba(0,0,0,0.25);
+            padding: 18px;
+            border-radius:10px;
+            min-height: 160px;
+            display:flex;
+            flex-direction:column;
+            justify-content:center;
+        }
+        .info-panel h3 { margin:0 0 8px 0; font-size:1.4em; }
+        .info-panel p { margin:0; line-height:1.4; }
+
+        @media (max-width:900px) {
+            .loisirs-wrapper { grid-template-columns: 1fr; }
+            .side-thumb { order: 1; }
+            .carousel-main { order: 2; }
+            .info-panel { order: 3; }
+            .carousel-viewport { height: 200px; }
         }
     </style>
 {% endblock %}
 
 {% block javascripts %}
     {{ parent() }}
-    <!-- Le JS n'est plus nécessaire pour le survol, tout est géré en CSS -->
+   <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            (function () {
+                const items = [
+                    {
+                        title: 'Gaming',
+                        img: 'https://static.bandainamcoent.eu/high/elden-ring/elden-ring/00-page-setup/elden-ring-new-header-mobile.jpg',
+                        desc: "J'aime jouer pour le challenge, la stratégie et la communauté. Le gaming me permet de me détendre tout en développant ma réflexion."
+                    },
+                    {
+                        title: 'Basketball',
+                        img: 'https://sportsogood.fr/wp-content/uploads/2021/10/basketball.png',
+                        desc: "Le basket m'offre un esprit d'équipe, du dépassement et une activité physique qui me recentre."
+                    },
+                    {
+                        title: 'Karting',
+                        img: 'https://blog.babasport.fr/wp-content/uploads/2016/06/Karting-4.jpg',
+                        desc: "Le karting me passionne pour la vitesse, la technique et l'adrénaline, c'est un loisir stimulant."
+                    }
+                ];
+
+                // preload images
+                items.forEach(i => { const p = new Image(); p.src = i.img; });
+
+                let idx = 0;
+                const mainImage = document.getElementById('mainImage');
+                const leftThumbImg = document.querySelector('#left-thumb img');
+                const titleEl = document.getElementById('loisirTitle');
+                const descEl = document.getElementById('loisirDesc');
+                const thumbsWrap = document.getElementById('thumbs');
+                const prevBtn = document.getElementById('prevBtn');
+                const nextBtn = document.getElementById('nextBtn');
+
+                if (!mainImage || !leftThumbImg || !titleEl || !descEl || !thumbsWrap) return;
+
+                const thumbImgs = Array.from(thumbsWrap.querySelectorAll('img'));
+
+                function setActiveThumb(i) {
+                    thumbImgs.forEach(img => {
+                        img.classList.toggle('active', Number(img.getAttribute('data-index')) === i);
+                    });
+                }
+
+                function render(i) {
+                    const it = items[i];
+                    mainImage.style.transition = 'opacity 220ms ease';
+                    mainImage.style.opacity = 0;
+                    setTimeout(() => {
+                        mainImage.src = it.img;
+                        leftThumbImg.src = items[(i - 1 + items.length) % items.length].img;
+                        titleEl.textContent = it.title;
+                        descEl.textContent = it.desc;
+                        setActiveThumb(i);
+                        void mainImage.offsetWidth;
+                        mainImage.style.opacity = 1;
+                    }, 200);
+                }
+
+                function goTo(index) {
+                    idx = (index + items.length) % items.length;
+                    render(idx);
+                    resetTimer();
+                }
+
+                // attach listeners directly to thumbnails (reliable)
+                thumbImgs.forEach(img => {
+                    img.style.cursor = 'pointer';
+                    img.addEventListener('click', function (e) {
+                        const val = this.getAttribute('data-index');
+                        if (val !== null) {
+                            const num = parseInt(val, 10);
+                            if (!Number.isNaN(num)) goTo(num);
+                        }
+                    });
+                });
+
+                prevBtn && prevBtn.addEventListener('click', function (e) {
+                    e.stopPropagation();
+                    goTo(idx - 1);
+                });
+
+                nextBtn && nextBtn.addEventListener('click', function (e) {
+                    e.stopPropagation();
+                    goTo(idx + 1);
+                });
+
+                // allow keyboard navigation
+                document.addEventListener('keydown', function (e) {
+                    if (e.key === 'ArrowLeft') goTo(idx - 1);
+                    if (e.key === 'ArrowRight') goTo(idx + 1);
+                });
+
+                // auto-rotate
+                let timer = setInterval(() => { idx = (idx + 1) % items.length; render(idx); }, 4500);
+                function resetTimer() { clearInterval(timer); timer = setInterval(() => { idx = (idx + 1) % items.length; render(idx); }, 4500); }
+
+                // initial render
+                render(idx);
+            })();
+        });
+    </script>
 {% endblock %}
