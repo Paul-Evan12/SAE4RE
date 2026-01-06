@@ -2,27 +2,42 @@
 
 {% block title %}Bienvenue sur mon Portfolio{% endblock %}
 
+{% block stylesheets %}
+    {{ parent() }}
+    {# On lie le fichier style.css #}
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+{% endblock %}
+
 {% block body %}
     <nav>
         <ul class="navbar">
             <li><a href="{{ path('app_blog_presentation') }}">Présentation</a></li>
             <li><a href="{{ path('app_blog_competences') }}">Compétences</a></li>
-             <li><a href="https://dochub.com/poloskitos/EB5r38Awlm9xY9QRXzZ1kD/cv-pefr-bis-250319-124039-251204-094729-pdf" target="_blank" rel="noopener">CV</a></li>
+            <li><a href="{{ path('app_blog_cv') }}">CV</a></li>
         </ul>
     </nav>
 
-    <div class="container">
-        <h1>Bienvenue sur mon Portfolio !</h1>
+    <div class="hero-section">
+        <h1 class="hero-title">Bienvenue sur mon E-Portofolio.<br><span class="hero-sub">Je m'appelle Paul-Evan Fourré-Rossetto</span></h1>
+    </div>
+    <div class="container main-content" style="animation: fadeInUp 1.2s 0.5s both;">
+        <h1 style="display:none;">Bienvenue sur mon Portfolio !</h1>
         <p>Je suis <strong>Paul-Evan</strong>, un étudiant étant passioné de l'informatique voulant plus tard en faire mon métier. Actuellement en étude à l'iut de Roanne dans le BUT réseaux et télécommunication, je souhaite continuer à m'améliorer dans la partie cybersécurité qu'offre mon étude </p>
         <p>je suis en recherche d'emplois/alternance afin d'améliorer mes compétences acquises ou en cours d'acquisition. Pour en comprendre plus sur moi suivre le lien ci-dessous.</p>
         <a href="{{ path('app_blog_presentation') }}" class="btn">Pour en savoir plus</a>
     </div>
 
+    <div class="image-row" style="display:flex;justify-content:center;gap:24px;margin:32px 0;flex-wrap:wrap;">
+        <img src="https://tse3.mm.bing.net/th/id/OIP.OYlHWboDsWB22i727MiqQAHaD3?pid=Api&P=0&h=180" alt="Image 1" style="max-width:320px;width:100%;border-radius:12px;box-shadow:0 2px 12px #0006;">
+        <img src="https://tse1.mm.bing.net/th/id/OIP.0zoiP1Nyv13RzwQc_8XGSwHaEO?pid=Api&P=0&h=180" alt="Image 2" style="max-width:320px;width:100%;border-radius:12px;box-shadow:0 2px 12px #0006;">
+        <img src="https://tse3.mm.bing.net/th/id/OIP.QaOzzGyshvaXWelObB2x4wHaEO?pid=Api&P=0&h=180" alt="Image 3" style="max-width:320px;width:100%;border-radius:12px;box-shadow:0 2px 12px #0006;">
+    </div>
+
     <footer style="position:fixed;bottom:0;left:0;width:100%;background:#333;color:#fff;padding:12px 0;z-index:999;text-align:center;">
         <div style="display:flex;flex-direction:column;align-items:center;gap:6px;">
             <div style="display:flex;align-items:center;gap:12px;">
-                 <a href="https://www.instagram.com/paulevan_rt/?next=%2F" target="_blank">
-                    <img src="lien_vers_logo_instagram.png" alt="Instagram" style="height:24px;vertical-align:middle;">
+                <a href="https://www.instagram.com/paulevan_rt/" target="_blank" rel="noopener" aria-label="Instagram" style="color:#fff;font-size:20px;display:inline-flex;align-items:center;">
+                    <i class="bi bi-instagram" aria-hidden="true"></i>
                 </a>
                 <span style="margin-left:1em;">| Gmail: <a href="mailto:paulevanfr@gmail.com">paulevanfr@gmail.com</a></span>
                 <span style="margin-left:1em;">| Téléphone: <a href="tel:0624525467">06 24 52 54 67</a></span>
@@ -30,120 +45,4 @@
             <div>site créé par Paul-Evan Fourré-Rossetto.</div>
         </div>
     </footer>
-{% endblock %}
-
-{% block stylesheets %}
-    {{ parent() }}
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #222;
-            color: #fff;
-        }
-        nav {
-            background-color: #000;
-            padding: 12px 0;
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 1000;
-        }
-
-        .navbar {
-            list-style: none;
-            display: flex;
-            justify-content: center;
-            margin: 0;
-            padding: 0;
-            gap: 30px;
-        }
-
-        .navbar li {
-            margin: 0;
-        }
-
-        .navbar a {
-            color: white;
-            text-decoration: none;
-            font-size: 18px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        .navbar a:hover {
-            text-decoration: underline;
-        }
-
-        .container {
-            background-color: #333333ff;
-            color: #fff;
-            padding: 30px;
-            border-radius: 10px;
-            width: 80%;
-            max-width: 600px;
-            margin: 100px auto 20px; /* margin-top augmenté pour tenir compte de la nav fixe */
-            text-align: center;
-        }
-
-        h1 {
-            font-size: 36px;
-            color: #fff;
-            margin-bottom: 20px;
-        }
-
-        p {
-            font-size: 18px;
-            line-height: 1.6;
-            margin-bottom: 30px;
-            color: #fff;
-        }
-
-        .btn {
-            padding: 12px 30px;
-            background-color: #131111ff;
-            color: white;
-            text-decoration: none;
-            font-size: 18px;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
-        }
-
-        .btn:hover {
-            background-color: #bbb;
-            color: #222;
-        }
-
-        footer {
-            background-color: #333;
-            color: #fff;
-            text-align: center;
-            margin-top: 40px;
-            font-size: 14px;
-        }
-
-        h1, h2, h3, h4, h5, h6, p, a, footer {
-            color: #fff;
-        }
-    </style>
-{% endblock %}
-
-{% block javascripts %}
-    {{ parent() }}
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            document.querySelectorAll('.loisir-item').forEach(function(item) {
-                const img = item.querySelector('img');
-                const text = item.querySelector('.loisir-text');
-                img.addEventListener('mouseenter', function() {
-                    text.style.display = 'inline-block';
-                });
-                img.addEventListener('mouseleave', function() {
-                    text.style.display = 'none';
-                });
-            });
-        });
-    </script>
 {% endblock %}

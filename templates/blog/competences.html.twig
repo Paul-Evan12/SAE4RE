@@ -2,126 +2,106 @@
 
 {% block title %}Compétences - Mon Portfolio{% endblock %}
 
-{% block body %}
-    <nav>
-        <ul class="navbar">
-            <li><a href="{{ path('app_index') }}">Accueil</a></li>
-            <li><a href="{{ path('app_blog_presentation') }}">Présentation</a></li>
-            <li><a href="https://dochub.com/poloskitos/EB5r38Awlm9xY9QRXzZ1kD/cv-pefr-bis-250319-124039-251204-094729-pdf" target="_blank" rel="noopener">CV</a></li>
-
-        </ul>
-    </nav>
-
-    <div class="container" style="text-align:center;">
-        <h1>Compétences</h1>
-        <h2>RT1 - Administrer les réseaux et l’Internet</h2>
-        <ul style="text-align:left;display:inline-block;">
-            <li><a href="#">AC11.01 Maîtriser les lois fondamentales de l’électricité afin d’intervenir sur des équipements de réseaux et télécommunications</a></li>
-            <li><a href="#">AC11.02 Comprendre l’architecture et les fondements des systèmes numériques, les principes du codage de l’information, des communications et de l’Internet</a></li>
-            <li><a href="#">AC11.03 Configurer les fonctions de base du réseau local</a></li>
-            <li><a href="#">AC11.04 Maîtriser les rôles et les principes fondamentaux des systèmes d’exploitation afin d’interagir avec ceux-ci pour la configuration et l’administration des réseaux et services fournis</a></li>
-            <li><a href="#">AC11.05 Savoir identifier les dysfonctionnements du réseau local</a></li>
-            <li><a href="#">AC11.06 Installer un poste client, expliquer la procédure mise en place</a></li>
-        </ul>
-        <h2>RT2 - Connecter les entreprises et les usagers</h2>
-        <ul style="text-align:left;display:inline-block;">
-            <li><a href="#">AC12.01 Mesurer et analyser les signaux</a></li>
-            <li><a href="#">AC12.02 Caractériser des systèmes de transmissions élémentaires et découvrir la modélisation mathématique de leur fonctionnement</a></li>
-            <li><a href="#">AC12.03 Déployer des supports de transmission</a></li>
-            <li><a href="#">AC12.04 Connecter les systèmes de ToIP</a></li>
-            <li><a href="#">AC12.05 Communiquer avec un tiers (client, collaborateur...) et adapter son discours et sa langue à son interlocuteur</a></li>
-        </ul>
-        <h2>RT3 - Créer des outils et des applications informatiques pour les R&T</h2>
-        <ul style="text-align:left;display:inline-block;">
-            <li><a href="#">AC13.01 Utiliser un système informatique et ses outils</a></li>
-            <li><a href="#">AC13.02 Lire, exécuter, corriger et modifier un programme</a></li>
-            <li><a href="#">AC13.03 Traduire un algorithme, dans un langage et pour un environnement donné</a></li>
-            <li><a href="#">AC13.04 Connaître l’architecture et les technologies d’un site Web</a></li>
-            <li><a href="#">AC13.05 Choisir les mécanismes de gestion de données adaptés au développement de l’outil et argumenter ses choix</a></li>
-            <li><a href="#">AC13.06 S’intégrer dans un environnement propice au développement et au travail collaboratif</a></li>
-        </ul>
-    </div>
-    <footer style="position:fixed;bottom:0;left:0;width:100%;background:#333;color:#fff;padding:12px 0;z-index:999;text-align:center;">
-        <div style="display:flex;flex-direction:column;align-items:center;gap:6px;">
-            <div style="display:flex;align-items:center;gap:12px;">
-                 <a href="https://www.instagram.com/paulevan_rt/?next=%2F" target="_blank">
-                    <img src="lien_vers_logo_instagram.png" alt="Instagram" style="height:24px;vertical-align:middle;">
-                </a>
-                <span style="margin-left:1em;">| Gmail: <a href="mailto:paulevanfr@gmail.com">paulevanfr@gmail.com</a></span>
-                <span style="margin-left:1em;">| Téléphone: <a href="tel:0624525467">06 24 52 54 67</a></span>
-            </div>
-            <div>site créé par Paul-Evan Fourré-Rossetto.</div>
-        </div>
-    </footer>
-{% endblock %}
-
 {% block stylesheets %}
     {{ parent() }}
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #222;
-            color: #fff;
-        }
-        nav {
-            background-color: #000;
-            padding: 12px 0;
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 1000;
-        }
-        .navbar {
-            list-style: none;
-            display: flex;
-            justify-content: center;
-            margin: 0;
-            padding: 0;
-            gap: 30px;
-        }
-        .navbar a {
-            color: white;
-            text-decoration: none;
-            font-size: 18px;
-            text-transform: uppercase;
-        }
-        .container {
-            background-color: #333;
-            color: #fff;
-            padding: 30px;
-            border-radius: 10px;
-            width: 80%;
-            max-width: 800px;
-            margin: 100px auto 20px;
-            text-align: center;
-        }
-        h1, h2, h3, h4, h5, h6, p, ul li, a, footer {
-            color: #fff;
-            font-family: inherit;
-        }
-        ul li a {
-            color: #fff;
-            text-decoration: underline;
-        }
-        ul li a:hover {
-            color: #bbb;
-        }
-        .container ul, .container h2 {
-            background-color: #222;
-            border-radius: 6px;
-            padding: 10px;
-        }
-        .container ul {
-            text-align: left;
-            display: inline-block;
-        }
-        footer {
-            background-color: #333;
-            color: #fff;
-            text-align: center;
-            margin-top: 40px;
-            font-size: 14px;
-        }
-    </style>
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/competences.css') }}">
+{% endblock %}
+
+{% block body %}
+<nav>
+    <ul class="navbar">
+        <li><a href="{{ path('app_index') }}">Accueil</a></li>
+        <li><a href="{{ path('app_blog_presentation') }}">Présentation</a></li>
+        <li><a href="{{ path('app_blog_cv') }}">CV</a></li>
+    </ul>
+</nav>
+
+<div class="competences-container">
+    <h1>Mes Projets SAE</h1>
+    <div class="sae-grid">
+        <div class="sae-card">
+            <img src="https://datascientest.com/wp-content/uploads/2021/04/DALL%C2%B7E-2024-01-23-17.44.21-Creation-dune-illustration-plus-specifique-a-la-cybersecurite-pour-un-article-en-format-16_9.-Limage-doit-evoquer-clairement-la-cybersecurite-avec-.png" alt="Cybersécurité" class="sae-img">
+            <h2>SAE 1.01 : Hygiène informatique & cybersécurité</h2>
+            <p><strong>Résumé :</strong> Cette SAE porte sur la protection et les dangers sur Internet. J'ai découvert les risques, les bonnes pratiques de sécurité, et réalisé un MOOC de l'ANSSI. J'ai aussi créé un diaporama sur les vulnérabilités et attaques informatiques, en expliquant les conséquences sur la sécurité des systèmes.</p>
+            <ul>
+                <li>Identifier les vulnérabilités d'un système informatique</li>
+                <li>Comprendre les conséquences (disponibilité, intégrité, confidentialité)</li>
+                <li>Autoformation MOOC ANSSI (4 modules)</li>
+                <li>Réalisation d'un diaporama explicatif</li>
+            </ul>
+        </div>
+        <div class="sae-card">
+            <img src="https://tse2.mm.bing.net/th/id/OIP.VmhmP3zvsHf927LA4_QV4wHaEc?pid=Api&P=0&h=180" alt="Réseau local et switchs" class="sae-img">
+            <h2>SAE 1.02 : Conception et documentation d'un réseau local</h2>
+            <p><strong>Résumé :</strong> Cette SAE consiste à analyser, documenter et concevoir un réseau local évolutif pour une entreprise en expansion. Il s'agit de retrouver les configurations des switchs, d'étudier le réseau existant, de concevoir de nouveaux LANs pour différents services, et de sécuriser l'accès aux équipements. La simulation est réalisée sous Packet Tracer et la documentation doit être exhaustive et justifiée.</p>
+            <ul>
+                <li>Analyse et documentation complète du réseau existant (topologie, IP, VLAN, configurations, erreurs...)</li>
+                <li>Récupération et sécurisation des configurations switchs via TFTP/SSH</li>
+                <li>Conception de 3 nouveaux LANs pour production, commerciaux et RH</li>
+                <li>Simulation du réseau sous Packet Tracer</li>
+                <li>Rédaction d'un tutoriel d'installation et d'utilisation de TFTP32/TFTP64</li>
+                <li>Justification de toutes les étapes et choix techniques</li>
+            </ul>
+        </div>
+        <div class="sae-card">
+            <img src="https://tse3.mm.bing.net/th/id/OIP.3nSrswOvhll6ceyEMCL42QAAAA?pid=Api&P=0&h=180" alt="Mesure couverture WiFi et câblage" class="sae-img">
+            <h2>SAE 1.03 : Mesure de couverture WiFi, devis matériel et recettage câblage</h2>
+            <p><strong>Résumé :</strong> Cette SAE regroupe plusieurs missions autour de l'infrastructure réseau de l'IUT : mesurer la couverture WiFi avant travaux d'isolation, proposer un devis pour le renouvellement du matériel passif de la salle réseaux G007, et réaliser le recettage des câbles réseaux après réorganisation. Chaque étape demande une analyse technique, la justification des choix et la production de plans et tableaux de mesures.</p>
+            <ul>
+                <li>Mesure de la couverture WiFi (signal, bruit, SNR, canaux, plans zonés, courbes, indicateurs)</li>
+                <li>Rédaction d'une documentation complète et justifiée</li>
+                <li>Proposition d'un devis pour le matériel passif (baie, panneaux, câbles, prises...)</li>
+                <li>Recettage des câbles réseaux : tests de conformité, mesures, plans, tableur de résultats</li>
+                <li>Justification de toutes les analyses et choix techniques</li>
+            </ul>
+        </div>
+        <div class="sae-card">
+            <img src="https://tse4.mm.bing.net/th/id/OIP.mmF0hCP2kQmdeTNDJyd9UwHaHa?pid=Api&P=0&h=180" alt="Portfolio web" class="sae-img">
+            <h2>SAE 1.04 : Création d'un portfolio web personnel</h2>
+            <p><strong>Résumé :</strong> Cette SAE consiste à concevoir et réaliser un site web personnel pour présenter son parcours, son CV et ses compétences. L'objectif est de structurer le site, utiliser Symfony et Bootstrap, et proposer un formulaire d'inscription permettant d'imprimer le CV. Le projet doit être hébergé sur GitHub et valoriser l'initiative et la créativité pour se démarquer auprès des recruteurs.</p>
+            <ul>
+                <li>Définir l'architecture du site (draw.io, PowerPoint, Visio...)</li>
+                <li>Structurer les pages selon l'architecture</li>
+                <li>Créer un projet Symfony</li>
+                <li>Utiliser Bootstrap et autres outils gratuits</li>
+                <li>Mettre en place un repository GitHub</li>
+                <li>Créer un formulaire d'inscription (sans base de données) pour générer le CV en PDF/docx</li>
+                <li>Valoriser l'initiative et l'innovation</li>
+            </ul>
+        </div>
+        <div class="sae-card">
+            <img src="https://tse3.mm.bing.net/th/id/OIP.rXM1PqWeg0iSsh_Z5RhUEwHaHa?pid=Api&P=0&h=180" alt="Traitement de données Python/Excel" class="sae-img">
+            <h2>SAE 1.05 : Analyse et traitement de données réseau</h2>
+            <p><strong>Résumé :</strong> Cette SAE porte sur l'analyse de données réseau pour identifier des activités suspectes sur un site distant. Elle combine des exercices pratiques en Python et Excel pour traiter des fichiers issus de tcpdump, automatiser l'extraction et l'affichage des résultats, et rédiger une notice d'utilisation pour le service informatique. Le code et les outils sont hébergés sur GitHub pour faciliter le partage et l'utilisation.</p>
+            <ul>
+                <li>Réalisation de TP et activités Excel pour le traitement de données</li>
+                <li>Extraction et analyse de données réseau avec Python</li>
+                <li>Automatisation des traitements et génération de fichiers CSV</li>
+                <li>Analyse des résultats dans Excel et affichage en page Web (Markdown)</li>
+                <li>Rédaction d'une notice d'utilisation pour Python et Excel</li>
+                <li>Hébergement du projet sur GitHub pour le partage</li>
+            </ul>
+        </div>
+        <!-- 4 autres cartes SAE à ajouter ici -->
+    </div>
+    <div class="portfolio-section" style="margin-top:48px;text-align:center;">
+        <h2>Portfolio</h2>
+        <p>Découvrez mon portfolio complet de projets, réalisations et suivis en cliquant sur le lien ci-dessous :</p>
+        <a href="https://docs.google.com/spreadsheets/d/1LRPnqfCuNWSczaGMCsC7eUNcTOEyy7evtWhUihI-JBE/edit?pli=1&gid=0#gid=0" target="_blank" class="btn" style="font-size:1.2em;">Portfolio</a>
+    </div>
+</div>
+
+<footer style="position:fixed;bottom:0;left:0;width:100%;background:#333;color:#fff;padding:12px 0;z-index:999;text-align:center;">
+    <div style="display:flex;flex-direction:column;align-items:center;gap:6px;">
+        <div style="display:flex;align-items:center;gap:12px;">
+            <a href="https://www.instagram.com/paulevan_rt/" target="_blank" rel="noopener" aria-label="Instagram" style="color:#fff;font-size:20px;display:inline-flex;align-items:center;">
+                <i class="bi bi-instagram" aria-hidden="true"></i>
+            </a>
+            <span style="margin-left:1em;">| Gmail: <a href="mailto:paulevanfr@gmail.com">paulevanfr@gmail.com</a></span>
+            <span style="margin-left:1em;">| Téléphone: <a href="tel:0624525467">06 24 52 54 67</a></span>
+        </div>
+        <div>site créé par Paul-Evan Fourré-Rossetto.</div>
+    </div>
+</footer>
 {% endblock %}
